@@ -121,6 +121,7 @@ TIME_ZONE = 'Asia/Tokyo'
 INSTALLED_APPS += [
     'django.contrib.sites',
     'django_extensions',        # jupyter ...
+    'books',
 ]
 
 

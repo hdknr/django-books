@@ -1,0 +1,6 @@
+[submodule "packages/django-mymedia"]
+	path = packages/django-mymedia
+	url = https://github.com/hdknr/django-mymedia.git
+[submodule "packages/django-mytaggit"]
+	path = packages/django-mytaggit
+	url = https://github.com/hdknr/django-mytaggit.git
