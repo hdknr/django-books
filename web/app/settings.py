@@ -118,6 +118,21 @@ STATIC_URL = '/static/'
 ## Update
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
+INSTALLED_APPS += [
+    'django.contrib.sites',
+    'django_extensions',        # jupyter ...
+]
+
+
+# Jupyter
+# python manage.py shell_plus --notebook
+NOTEBOOK_ARGUMENTS = [
+    '--notebook-dir', 'data/notebooks',
+]
+IPYTHON_ARGUMENTS = [
+    '--debug',
+]
+
 
 # Local Settings:
 try:
