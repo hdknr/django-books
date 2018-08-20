@@ -1,0 +1,24 @@
+# msgpack
+msgpack
+
+# Django
+django
+django-extensions
+
+# data
+PyYAML
+
+# Command
+django-click
+
+# Tags 
+django-taggit
+
+# tests
+factory_boy
+tox
+coverage
+django_nose
+
+# robots sitemap
+django-robots
