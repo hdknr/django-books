@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 
 import os
+from django.conf import global_settings
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -111,18 +112,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_URL = '/static/'
 
 
 ####
 ## Update
 LANGUAGE_CODE = 'ja'
 TIME_ZONE = 'Asia/Tokyo'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'data/media')
+SITE_ID = 1
 INSTALLED_APPS += [
     'django.contrib.sites',
     'django_extensions',        # jupyter ...
     'books',
 ]
+AUTHENTICATION_BACKENDS = [
+    'app.backends.AuthBackend',
+] + global_settings.AUTHENTICATION_BACKENDS
 
 
 # Jupyter

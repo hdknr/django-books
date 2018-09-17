@@ -4,3 +4,6 @@
 [submodule "packages/django-mytaggit"]
 	path = packages/django-mytaggit
 	url = https://github.com/hdknr/django-mytaggit.git
+[submodule "packages/pykakasi"]
+	path = packages/pykakasi
+	url = https://github.com/hdknr/pykakasi.git
