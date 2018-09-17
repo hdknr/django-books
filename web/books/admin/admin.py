@@ -1,7 +1,7 @@
 from django.contrib import admin
 from books import models
 from app.admin  import register_base
-from . import inlines
+from . import inlines, forms
 
 
 @admin.register(models.Organization)
@@ -30,6 +30,7 @@ class ReceiptAdmin(admin.ModelAdmin):
         if f.name not in ['created_at', 'updated_at', 'invoice_ptr']]
     exclude = ['created_at', 'subclass_type']
     readonly_fields = ['updated_at']
+    form = forms.ReceiptForm
 
 
 @admin.register(models.Payment)
@@ -39,6 +40,7 @@ class PaymentAdmin(admin.ModelAdmin):
         if f.name not in ['created_at', 'updated_at', 'invoice_ptr']]
     exclude = ['created_at', 'subclass_type']
     readonly_fields = ['updated_at']
+    form = forms.PaymentForm
 
 
 @admin.register(models.Attachment)

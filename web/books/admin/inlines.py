@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.contrib.contenttypes.admin import GenericTabularInline
+
 from django.utils.translation import ugettext_lazy as _
 from books import models
 
@@ -17,8 +19,10 @@ class FisicalYearInline(admin.TabularInline):
     extra = 0
 
 
-class BankInline(admin.TabularInline):
+class BankInline(GenericTabularInline):
     model = models.Bank
-    exclude = ['created_at']
+    exclude = ['created_at', 'organization']
     readonly_fields = ['updated_at']
     extra = 0
+    ct_field = 'owner_content_type'
+    ct_fk_field = 'owner_object_id'
