@@ -42,3 +42,20 @@ def fisical_year(ctx, fisical_year_id):
     if year:
         click.echo(year.income())
         click.echo(year.spending())
+
+
+@main.command()
+@click.argument('org_id')
+@click.pass_context
+def payments(ctx, org_id):
+    '''指定した組織への支払い'''
+    data = models.Payment.objects.spendings(organization__id=org_id).totals()
+    click.echo(data)
+
+
+@main.command()
+@click.pass_context
+def receipts(ctx):
+    '''入金予定'''
+    data = models.Receipt.objects.incomes().totals()
+    click.echo(data)

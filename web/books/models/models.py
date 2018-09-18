@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
-from . import defs, methods
+from . import defs, methods, querysets
 
 
 class Organization(defs.Organization):
@@ -75,6 +75,8 @@ class Invoice(defs.Invoice, methods.Invoice):
     def __str__(self):
         year = getattr(self, 'fisical_year', '')
         return f"{year} {self.title} {self.total_amount}"
+    
+    objects = querysets.InvoiceQuerySet.as_manager()
 
 
 class Receipt(Invoice, defs.Receipt):
