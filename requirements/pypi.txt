@@ -7,6 +7,8 @@ django-extensions
 
 # data
 PyYAML
+pandas
+xlwt
 
 # Command
 django-click

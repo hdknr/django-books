@@ -126,7 +126,7 @@ SITE_ID = 1
 INSTALLED_APPS += [
     'django.contrib.sites',
     'django_extensions',        # jupyter ...
-    'books',
+    'books', 'jcb',
 ]
 AUTHENTICATION_BACKENDS = [
     'app.backends.AuthBackend',
